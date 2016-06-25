@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	  <title>Калькулятор</title>
+	  <meta charset="utf-8" />	 
+	  <link rel="stylesheet" href="style.css" />
+	</head>
+	<body id="body">
+		<header>
+			<img src="webLogo.png" alt="Логотип" width="220" />
+			<h1>Основы Web-технологий</h1>
+			<nav>
+				<ul class="menu">
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="web-tech.html">Web-технологии</a>
+						<ul class="submenu">
+							<li><a href="html5.html">HTML5</a></li>
+							<li><a href="css3.html">CSS3</a></li>
+							<li><a href="javascript.html">JavaScript</a></li>
+						</ul>
+					</li>
+					<li><a href="calc.html">Калькулятор</a></li>
+					<li><a href="test.html">Тест</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div class="main">
+				<form name="Calculator" autocomplete="off">
+					<table>
+						<tr>
+							<td colspan="5">
+								<input id="CalcDisp" type="text" value="" placeholder="0" />
+							</td>
+						</tr>
+						<tr>
+							<td><button type="button" onclick="click_number('7')">7</button></td>
+							<td><button type="button" onclick="click_number('8')">8</button></td>
+							<td><button type="button" onclick="click_number('9')">9</button></td>
+							<td><button type="button" onclick="divide()">/</button></td>
+							<td><button type="button" onclick="resetForm()">C</button></td>
+						</tr>
+						<tr>
+							<td><button type="button" onclick="click_number('4')">4</button></td>
+							<td><button type="button" onclick="click_number('5')">5</button></td>
+							<td><button type="button" onclick="click_number('6')">6</button></td>
+							<td><button type="button" onclick="multiply()">*</button></td>
+							<td><button type="button" onclick="negativNum()">&#177;</button></td>
+						</tr>
+						<tr>
+							<td><button id="b1" type="button" onclick="click_number('1')">1</button></td>
+							<td><button type="button" onclick="click_number('2')">2</button></td>
+							<td><button type="button" onclick="click_number('3')">3</button></td>
+							<td><button type="button" onclick="minus()">-</button></td>
+							<td rowspan="2"><button id="result"type="button" onclick="equal()">=</button></td>
+						</tr>
+						<tr>
+							<td colspan="2"><button id="zero" type="button" onclick="click_number('0')">0</button>
+							</td><td><button type="button" onclick="click_point('.')">.</button></td>
+							<td><button type="button" onclick="plus()">+</button></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</main>
+		<footer>
+			<address>
+				<p><a href="mailto:mail_dim@ukr.net">Пишите: mail_dim@ukr.net</a></p>
+			</address>
+			<p>&copy; Бондарев Д.Я. 2016</p>
+		</footer>	
+<script src="scriptCalc.js"></script>
+   </body>
+</html>
