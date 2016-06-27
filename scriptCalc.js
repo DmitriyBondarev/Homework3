@@ -11,7 +11,7 @@ function resetForm() {								//очистка формы
     a = b = res = undefined;
     lastOper = "number";
 };
-function click_number(x) {
+function clickNumber(x) {
     if (lastOper == "number" && b === undefined) {
         a = inp.value = inp.value + x;
         lastOper = "number";
