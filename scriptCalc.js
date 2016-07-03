@@ -1,18 +1,18 @@
 var inp = document.getElementById("CalcDisp");
 var oper = "";
-var a;
-var b;
-var res;
+var a = null;
+var b = null;
+var res = null;
 var lastOper = "number";
 
 function resetForm() {								//очистка формы 
     document.forms["Calculator"].reset();
     oper = "";
-    a = b = res = undefined;
+    a = b = res = null;
     lastOper = "number";
 };
 function clickNumber(x) {
-    if (lastOper == "number" && b === undefined) {
+    if (lastOper == "number" && b === null) {
         a = inp.value = inp.value + x;
         lastOper = "number";
     } else if (lastOper !== "number") {
@@ -24,13 +24,14 @@ function clickNumber(x) {
             lastOper = "number";
         }
 };
-function click_point(x) {
-    if (a === undefined || a !== undefined && b !== undefined && lastOper == "=") {
+function clickPoint() {
+    var x = ".";
+    if (a === null || a !== null && b !== null && lastOper == "=") {
         a = inp.value = 0 + '.';
         lastOper = "number";
     } else {
         if (inp.value.indexOf(x) == -1) {
-            if (lastOper == "number" && b === undefined) {
+            if (lastOper == "number" && b === null) {
             a = inp.value = inp.value + x;
             lastOper = "number";
         } else if (lastOper !== "number") {
@@ -49,10 +50,10 @@ function click_point(x) {
         }
 };
 function plus() {                                   //суммирование
-    if (a === undefined && b === undefined) {
+    if (a === null && b === null) {
         alert("Сначала нужно ввести число");
     } else {
-        if (lastOper == "number" && a !== undefined && b !== undefined) {
+        if (lastOper == "number" && a !== null && b !== null) {
             equal();
             oper = "+";    
         } else {
@@ -64,10 +65,10 @@ function plus() {                                   //суммирование
     }
 };
 function minus() {                                   //вычитание
-    if (a === undefined && b === undefined) {
+    if (a === null && b === null) {
         alert("Сначала нужно ввести число");
     } else {
-        if (lastOper == "number" && a !== undefined && b !== undefined) {
+        if (lastOper == "number" && a !== null && b !== null) {
             equal();
             oper = "-";    
         } else {
@@ -79,10 +80,10 @@ function minus() {                                   //вычитание
     }
 };
 function multiply() {                                   //умножение
-    if (a === undefined && b === undefined) {
+    if (a === null && b === null) {
         alert("Сначала нужно ввести число");
     } else {
-        if (lastOper == "number" && a !== undefined && b !== undefined) {
+        if (lastOper == "number" && a !== null && b !== null) {
             equal();
             oper = "*";    
         } else {
@@ -94,10 +95,10 @@ function multiply() {                                   //умножение
     }
 };
 function divide() {                                   //деление
-    if (a === undefined && b === undefined) {
+    if (a === null && b === null) {
         alert("Сначала нужно ввести число");
     } else {
-        if (lastOper == "number" && a !== undefined && b !== undefined) {
+        if (lastOper == "number" && a !== null && b !== null) {
             equal();
             oper = "/";    
         } else {
@@ -109,7 +110,7 @@ function divide() {                                   //деление
     }
 };
 function equal() {
-    if (a === undefined && b === undefined) {
+    if (a === null && b === null) {
         alert("Некорректный ввод");
     } else {
         lastOper = "=";
@@ -143,13 +144,52 @@ function equal() {
     }
 };
 function negativNum () {                                //отрицательное число
-    if (a !== undefined && b === undefined) {
+    if (a !== null && b === null) {
         a = inp.value = inp.value * (-1);
-    } else if (a !== undefined && b !== undefined && lastOper == "=") {
+    } else if (a !== null && b !== null && lastOper == "=") {
         a = inp.value = inp.value * (-1);
-} else if (a !== undefined && b !== undefined && res !== a) {
+} else if (a !== null && b !== null && res !== a) {
         b = inp.value = inp.value * (-1);
 } else {
     alert("Некорректный ввод");
 }
 };
+
+b1.onclick = function () {
+        clickNumber('1');
+    };
+b2.onclick = function () {
+        clickNumber('2');
+    };
+b3.onclick = function () {
+        clickNumber('3');
+    };
+b4.onclick = function () {
+        clickNumber('4');
+    };
+b5.onclick = function () {
+        clickNumber('5');
+    };
+b6.onclick = function () {
+        clickNumber('6');
+    };
+b7.onclick = function () {
+        clickNumber('7');
+    };
+b8.onclick = function () {
+        clickNumber('8');
+    };
+b9.onclick = function () {
+        clickNumber('9');
+    };
+zero.onclick = function () {
+        clickNumber('0');
+    };
+dvd.onclick = divide;
+rst.onclick = resetForm;
+mltpl.onclick = multiply;
+negtv.onclick = negativNum;
+min.onclick = minus;
+result.onclick = equal;
+point.onclick = clickPoint;
+pls.onclick = plus;

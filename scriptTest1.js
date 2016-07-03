@@ -3,7 +3,7 @@ var percent;
 var right = [];
     right[0] = document.getElementById("r1");
     right[1] = document.getElementById("r7");
-    right[2] = document.getElementById("r11");
+    right[2] = document.getElementById("r12");
     right[3] = document.getElementById("ch2");
     right[4] = document.getElementById("ch4");
     right[5] = document.getElementById("ch5");
